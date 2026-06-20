@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: rush-transcribe
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    # $PORT is provided by Render; bind to it.
+    startCommand: "uvicorn app:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: WHISPER_MODEL
+        value: small
+      - key: PYTHON_VERSION
+        value: "3.11.9"
