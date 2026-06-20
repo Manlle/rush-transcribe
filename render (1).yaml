@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: rush-transcribe
-    runtime: docker
-    plan: free
-    dockerfilePath: ./Dockerfile
-    envVars:
-      - key: WHISPER_MODEL
-        value: small
